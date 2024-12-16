@@ -13,7 +13,7 @@ public class Locker {
         this.id = IdGenerator.generateId(8);
         this.lockerSize = lockerSize;
         this.locationId = locationId;
-        this.lockerStatus = LockerStatus.AVAILALBE;
+        this.lockerStatus = LockerStatus.AVAILABLE;
     }
 
     // Getter for id

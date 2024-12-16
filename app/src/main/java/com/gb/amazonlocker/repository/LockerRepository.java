@@ -26,7 +26,7 @@ public class LockerRepository {
         List<Locker> lockerList =
                 lockers.stream()
                         .filter(locker ->
-                                locker.getLockerStatus() == LockerStatus.AVAILALBE &&
+                                locker.getLockerStatus() == LockerStatus.AVAILABLE &&
                                         locker.getLockerSize() == lockerSize)
                         .collect(Collectors.toList());
         if (lockerList != null && !lockerList.isEmpty())
