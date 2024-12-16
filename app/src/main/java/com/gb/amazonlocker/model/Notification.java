@@ -33,4 +33,20 @@ public class Notification {
     public String getCode() {
         return code;
     }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public void setLockerId(String lockerId) {
+        this.lockerId = lockerId;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }
