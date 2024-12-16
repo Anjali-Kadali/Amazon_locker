@@ -7,13 +7,14 @@ public class Locker {
     private LockerSize lockerSize;
     private String locationId;
     private LockerStatus lockerStatus;
-
+    private GeoLocation geoLocation;
     // Constructor
-    public Locker(LockerSize lockerSize, String locationId) {
+    public Locker(String locationId, LockerSize lockerSize, GeoLocation geoLocation, LockerStatus AVAILABLE) {
         this.id = IdGenerator.generateId(8);
         this.lockerSize = lockerSize;
         this.locationId = locationId;
         this.lockerStatus = LockerStatus.AVAILABLE;
+        this.geoLocation = geoLocation;
     }
 
     // Getter for id
@@ -54,5 +55,13 @@ public class Locker {
     // Setter for lockerStatus
     public void setLockerStatus(LockerStatus lockerStatus) {
         this.lockerStatus = lockerStatus;
+    }
+
+    public GeoLocation getGeoLocation() {
+        return geoLocation;
+    }
+
+    public void setGeoLocation(GeoLocation geoLocation) {
+        this.geoLocation = geoLocation;
     }
 }

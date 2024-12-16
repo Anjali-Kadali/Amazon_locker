@@ -60,9 +60,11 @@ public class LockerService {
         return checkAndGetAvailableLockers(lockerSize, geoLocation);
     }
 
-    private Locker checkAndGetAvailableLockers(LockerSize lockerSize,
-                                               GeoLocation geoLocation) {
+    private Locker checkAndGetAvailableLockers(LockerSize lockerSize,   GeoLocation geoLocation) {
         Locker locker = LockerRepository.getLocker(lockerSize, geoLocation);
+        if (locker == null) {
+            throw new RuntimeException("No available lockers for the specified size and location.");
+        }
         locker.setLockerStatus(LockerStatus.BOOKED);
         return locker;
     }
@@ -81,4 +83,7 @@ public class LockerService {
         String time = localDateFormat.format(new Date());
         return time;
     }
+
+    
+    
 }
