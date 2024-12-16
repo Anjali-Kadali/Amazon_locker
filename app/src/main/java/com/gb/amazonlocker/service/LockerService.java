@@ -47,7 +47,7 @@ public class LockerService {
         }
         Locker locker = LockerRepository.lockerMap.get(lockerId);
         if (canPickFromLocker(lockerId, localDateTime)) {
-            locker.setLockerStatus(LockerStatus.AVAILALBE);
+            locker.setLockerStatus(LockerStatus.AVAILABLE);
             lockerPackage.get().setCode(null);
         } else {
             lockerPackage.get().setCode(null);
