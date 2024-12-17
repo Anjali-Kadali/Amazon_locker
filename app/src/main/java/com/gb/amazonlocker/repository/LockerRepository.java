@@ -38,7 +38,7 @@ public class LockerRepository {
     }
     
 
-    private static boolean isNearby(GeoLocation loc1, GeoLocation loc2, double radius) {
+    public static boolean isNearby(GeoLocation loc1, GeoLocation loc2, double radius) {
         double distance = Math.sqrt(
                 Math.pow(loc1.getLatitude() - loc2.getLatitude(), 2) +
                 Math.pow(loc1.getLongitude() - loc2.getLongitude(), 2)

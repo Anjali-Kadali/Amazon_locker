@@ -1,7 +1,6 @@
 package com.gb.amazonlocker;
 
 import java.util.List;
-import java.util.UUID;  // Import UUID to generate unique order IDs
 
 import com.gb.amazonlocker.model.GeoLocation;
 import com.gb.amazonlocker.model.Item;
@@ -12,10 +11,6 @@ import com.gb.amazonlocker.service.LockerService;
 
 public class AmazonLockerMain {
     public static void main(String[] args) {
-        // Step 1: Create Order
-        // Generate a unique order ID using UUID
-        String orderId = "order" + UUID.randomUUID().toString(); // Unique order ID
-
         Item item1 = new Item();
         item1.setId("item1");
         item1.setQuantity(2); // Quantity of item1
@@ -28,7 +23,7 @@ public class AmazonLockerMain {
         GeoLocation deliveryGeoLocation = new GeoLocation(2434.02, 13742.34); // Order delivery location
 
         // Create the order and add it to the repository
-        OrderRepository.createOrder(orderId, items, deliveryGeoLocation);
+        String orderId = OrderRepository.createOrder( items, deliveryGeoLocation);
         System.out.println("Order created: " + orderId);
 
         // Step 2: Assign a locker based on order's delivery location and item size
