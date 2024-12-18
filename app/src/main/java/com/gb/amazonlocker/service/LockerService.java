@@ -29,7 +29,7 @@ public class LockerService {
     }
 
     public Locker getLocker(LockerSize lockerSize, GeoLocation geoLocation) {
-        return getAvailableLocker(lockerSize, geoLocation);
+        return checkAndGetAvailableLockers(lockerSize, geoLocation);
     }
 
     public void pickFromLocker(String lockerId,
@@ -53,11 +53,6 @@ public class LockerService {
             lockerPackage.get().setCode(null);
             throw new PackPickTimeExceededException("Package not picked for x days");
         }
-    }
-
-    private Locker getAvailableLocker(LockerSize lockerSize,
-                                      GeoLocation geoLocation) {
-        return checkAndGetAvailableLockers(lockerSize, geoLocation);
     }
 
     private Locker checkAndGetAvailableLockers(LockerSize lockerSize,   GeoLocation geoLocation) {

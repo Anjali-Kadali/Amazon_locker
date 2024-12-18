@@ -47,7 +47,7 @@ Locker locker4 = new StandardLocker("locker4", LockerSize.M, new GeoLocation(123
     }
     
     public static Locker getLocker(LockerSize lockerSize, GeoLocation location) {
-        double searchRadius = 10.0; // Example radius
+        double searchRadius = 10.0; 
     
         List<Locker> lockerList =
                 lockers.stream()
